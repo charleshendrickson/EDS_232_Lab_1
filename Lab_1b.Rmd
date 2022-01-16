@@ -138,6 +138,19 @@ mdl <- read_rds(mdl_maxent_rds)
 plot(mdl)
 ```
 
+```{r}
+# plot term plots
+response(mdl)
+```
+
+```{r}
+# predict
+y_predict <- predict(env_stack, mdl) #, ext=ext, progress='')
+
+plot(y_predict, main='Maxent, raw prediction')
+data(wrld_simpl, package="maptools")
+plot(wrld_simpl, add=TRUE, border='dark grey')
+```
 
 
 
